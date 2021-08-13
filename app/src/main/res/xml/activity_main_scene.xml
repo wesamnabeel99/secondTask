@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/myImage"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@+id/playButton"
+            android:layout_width="@dimen/iconMedium"
+            android:layout_height="@dimen/iconMedium"
+            app:layout_constraintStart_toStartOf="@+id/myImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/myImage"
+            app:layout_constraintEnd_toEndOf="@+id/myImage"
+             />
+        <Constraint android:id="@+id/myText"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myImage"
+             />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@id/myImage"
+            android:layout_height="@dimen/zero"
+            android:layout_width="@dimen/widthHuge"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/myText" />
+
+        <Constraint android:id="@+id/myText"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="@dimen/zero"
+            app:layout_constraintStart_toEndOf="@+id/myImage" />
+
+        <Constraint
+            android:id="@+id/playButton"
+            android:layout_width="@dimen/iconSmall"
+            android:layout_height="@dimen/iconSmall"
+            android:layout_marginRight="@dimen/marginSmall"
+            app:layout_constraintRight_toRightOf="@+id/myText"
+            app:layout_constraintBottom_toBottomOf="@id/myText"
+            app:layout_constraintTop_toTopOf="@+id/myText"
+         />
+
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start" >
+            <OnSwipe app:touchAnchorId="@id/myImage"
+                app:dragDirection="dragUp"
+            />
+    </Transition>
+
+</MotionScene>
