@@ -14,10 +14,10 @@
         android:layout_height="wrap_content"
         android:background="@color/black"
         android:gravity="center_vertical"
-        android:padding="16dp"
-        android:text="My Video Title"
+        android:padding="@dimen/paddingNormal"
+        android:text="@string/my_video_title"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="@dimen/textNormal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/myImage" />
@@ -25,18 +25,20 @@
     <ImageView
         android:id="@+id/myImage"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:src="#ff0000" />
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/bkprogrammer" />
 
     <ImageView
         android:id="@+id/playButton"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/iconMedium"
+        android:layout_height="@dimen/iconMedium"
         android:src="@drawable/ic_baseline_play_arrow_24"
         app:layout_constraintBottom_toBottomOf="@+id/myImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/myImage"
         app:layout_constraintTop_toTopOf="@+id/myImage"
+        android:clickable="true"
         />
 
 
